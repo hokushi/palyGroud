@@ -1,26 +1,14 @@
+// src/App.tsx
 import React from 'react';
-import logo from './logo.svg';
+import { Box } from '@mui/material';
+import { useRoutes } from 'react-router-dom';
+import routes from './pages/routes';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Hoge
-        </a>
-      </header>
-    </div>
-  );
-}
+const App: React.FC = () => {
+  const element = useRoutes(routes);
+
+  return <Box>{element}</Box>;
+};
 
 export default App;
